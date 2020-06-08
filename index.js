@@ -9,7 +9,9 @@ app = new Vue({
 	data: {
 		kunci: '',
 		jawaban: '',
-		hasil: ''
+		hasil: '',
+		hasil_sesungguhnya: '',
+		tertinggi: 'x'
 	},
 	methods: {
 		olah(){
@@ -31,17 +33,22 @@ app = new Vue({
 				hasil.push(benar)
 			}
 			panjang_kunci = kunci.length
+			this.tertinggi = panjang_kunci
 			teks = ''
+			teks_sesungguhnya = ''
 			for (n in hasil){
 				if (n % 2 == 0){
 					if (hasil[n] != ''){
 						teks += `${hasil[n]}: `
+						teks_sesungguhnya += `${hasil[n]}: `
 					}
 				} else {
 					teks += `${hasil[n] / panjang_kunci * 100}\n`
+					teks_sesungguhnya += `${hasil[n]}\n`
 				}
 			}
 			this.hasil = teks
+			this.hasil_sesungguhnya = teks_sesungguhnya
 		}
 	},
 	watch: {

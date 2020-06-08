@@ -15,16 +15,22 @@
 				<input type="text" v-model='kunci' class="form-control" placeholder="CADBCCADBACADBC">
 			</div>
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="form-group">
 						<label for="">Jawaban siswa</label>
 						<textarea name="" id="" cols="30" rows="10" class="form-control tinggi" v-model='jawaban' placeholder="Andi,CADBCCADBACADBC"></textarea>
 					</div>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<div class="form-group">
-						<label for="">Hasil</label>
-						<textarea name="" id="" cols="30" rows="10" class="form-control tinggi" v-model='hasil' placeholder="Andi: 80" readonly=""></textarea>
+						<label for="">Nilai (0 - {{ tertinggi }})</label>
+						<textarea name="" id="" cols="30" rows="10" class="form-control tinggi" v-model='hasil_sesungguhnya' placeholder="Andi: 25" readonly=""></textarea>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<label for=""><mark><em>Nilai (0 - 100)</em></mark></label>
+						<textarea name="" id="" cols="30" rows="10" class="form-control tinggi" v-model='hasil' placeholder="Andi: 100" readonly=""></textarea>
 					</div>
 				</div>
 			</div>
