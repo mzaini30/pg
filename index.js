@@ -17,7 +17,7 @@ app = new Vue({
 			jawaban = this.jawaban.replace(/\t/g, '').split('\n')
 			for (n in jawaban){
 				jawaban[n] = jawaban[n].split(',')
-				jawaban[n][1] = jawaban[n][1].split('')
+				jawaban[n][1] = jawaban[n][1].replace(/ /g, '').split('')
 			}
 			hasil = []
 			for (n in jawaban){
