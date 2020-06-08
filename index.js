@@ -26,7 +26,7 @@ app = new Vue({
 				hasil.push(jawaban[n][0])
 				benar = 0
 				for (y in jawaban[n][1]){
-					if (jawaban[n][1][y] == kunci[y]){
+					if (jawaban[n][1][y].toLowerCase() == kunci[y].toLowerCase()){
 						benar++
 					}
 				}
