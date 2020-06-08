@@ -16,6 +16,8 @@ app = new Vue({
 	methods: {
 		olah(){
 			kunci = this.kunci.replace(/\t/g, '').replace(/ /g, '').split('')
+			panjang_kunci = kunci.length
+			this.tertinggi = panjang_kunci
 			jawaban = this.jawaban.replace(/\t/g, '').split('\n')
 			for (n in jawaban){
 				jawaban[n] = jawaban[n].split(',')
@@ -32,8 +34,6 @@ app = new Vue({
 				}
 				hasil.push(benar)
 			}
-			panjang_kunci = kunci.length
-			this.tertinggi = panjang_kunci
 			teks = ''
 			teks_sesungguhnya = ''
 			for (n in hasil){
