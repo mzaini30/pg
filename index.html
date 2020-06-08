@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cek Pilihan Ganda</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="vendor/bootstrap.min.css">
+</head>
+<body>
+	<div class="vue">
+		<div class="container">
+			<br>
+			<div class="form-group">
+				<label for="">Kunci jawaban</label>
+				<input type="text" v-model='kunci' class="form-control" placeholder="CADBCCADBACADBC">
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label for="">Jawaban siswa</label>
+						<textarea name="" id="" cols="30" rows="10" class="form-control tinggi" v-model='jawaban' placeholder="Andi,CADBCCADBACADBC"></textarea>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="form-group">
+						<label for="">Hasil</label>
+						<textarea name="" id="" cols="30" rows="10" class="form-control tinggi" v-model='hasil' placeholder="Andi: 80" readonly=""></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="vendor/vue.min.js"></script>
+	<script src="vendor/jquery.min.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
