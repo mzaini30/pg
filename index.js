@@ -34,9 +34,9 @@ app = new Vue({
 			teks = ''
 			for (n in hasil){
 				if (n % 2 == 0){
-					teks += hasil[n]
+					teks += `${hasil[n]}: `
 				} else {
-					teks += `: ${hasil[n] / panjang_kunci * 100}\n`
+					teks += `${hasil[n] / panjang_kunci * 100}\n`
 				}
 			}
 			this.hasil = teks
