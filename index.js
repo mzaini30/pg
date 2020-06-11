@@ -1,5 +1,6 @@
 ukuran = () => {
 	$('.tinggi').css('height', $(window).height() - 150)
+	$('.setengah-tinggi').css('height', ($(window).height() - 168) / 2)
 }
 ukuran()
 $(window).resize(() => ukuran())
@@ -11,7 +12,9 @@ app = new Vue({
 		jawaban: '',
 		hasil: '',
 		hasil_sesungguhnya: '',
-		tertinggi: 'x'
+		tertinggi: 'x',
+		namanya: [],
+		laporan: []
 	},
 	methods: {
 		olah(){
@@ -24,25 +27,35 @@ app = new Vue({
 				jawaban[n][1] = jawaban[n][1].replace(/ /g, '').split('')
 			}
 			hasil = []
+			namanya = []
+			laporan = []
 			for (n in jawaban){
-				hasil.push(jawaban[n][0])
+				hasil.push(jawaban[n][0]) // nama
+				namanya.push(jawaban[n][0])
 				benar = 0
-				for (y in jawaban[n][1]){
+				jawaban_laporan = ''
+				for (y in jawaban[n][1]){ // jawabannya
 					if (jawaban[n][1][y].toLowerCase() == kunci[y].toLowerCase()){
-						benar++
+						benar++ // jika benar
+						jawaban_laporan += jawaban[n][1][y]
+					} else {
+						jawaban_laporan += `<span class='merah'>${jawaban[n][1][y]}</span>`
 					}
 				}
 				hasil.push(benar)
+				laporan.push(jawaban_laporan)
 			}
+			this.namanya = namanya
+			this.laporan = laporan
 			teks = ''
 			teks_sesungguhnya = ''
 			for (n in hasil){
-				if (n % 2 == 0){
+				if (n % 2 == 0){ // nama
 					if (hasil[n] != ''){
 						teks += `${hasil[n]}: `
 						teks_sesungguhnya += `${hasil[n]}: `
 					}
-				} else {
+				} else { // total nilai
 					teks += `${hasil[n] / panjang_kunci * 100}\n`
 					teks_sesungguhnya += `${hasil[n]}\n`
 				}

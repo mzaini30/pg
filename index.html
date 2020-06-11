@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="vendor/bootstrap.min.css">
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	<div class="vue">
@@ -18,7 +19,25 @@
 				<div class="col-sm-6">
 					<div class="form-group">
 						<label for="">Jawaban siswa</label>
-						<textarea name="" id="" cols="30" rows="10" class="form-control tinggi" v-model='jawaban' placeholder="Andi,CADBCCADBACADBC"></textarea>
+						<textarea name="" id="" cols="30" rows="10" class="form-control setengah-tinggi" v-model='jawaban' placeholder="Andi,CADBCCADBACADBC"></textarea>
+					</div>
+					<div class="form-group">
+						<div class="panel panel-default">
+							<div class="panel-body setengah-tinggi scroll">
+								<table class="table table-bordered table-striped">
+									<tbody>
+										<tr>
+											<td></td>
+											<td>{{ kunci }}</td>
+										</tr>
+										<tr v-for='(x, n) in namanya'>
+											<td>{{ x }}</td>
+											<td v-html='laporan[n]'></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-sm-3">

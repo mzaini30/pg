@@ -1,0 +1,10 @@
+* {
+	word-wrap: break-word;
+}
+.scroll {
+	overflow: auto;
+}
+.merah {
+	background: rgb(244, 67, 54);
+	color: white;
+}
